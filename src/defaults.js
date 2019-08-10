@@ -6,7 +6,7 @@ export default {
   fixtures: [],
   maxFixtures: 10,
   initialValue: '',
-  placeholder: 'Search places',
+  placeholder: '',
   disabled: false,
   className: '',
   inputClassName: '',

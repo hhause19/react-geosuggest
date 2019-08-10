@@ -3,6 +3,7 @@ import shallowCompare from 'react-addons-shallow-compare';
 import classnames from 'classnames';
 
 import filterInputAttributes from './filter-input-attributes';
+import {TextValidator} from 'react-material-ui-form-validator';
 
 /**
  * The input field
@@ -34,8 +35,8 @@ class Input extends React.Component {
   /**
    * When the input got changed
    */
-  onChange() {
-    this.props.onChange(this.input.value);
+  onChange(e) {
+    this.props.onChange(e.target.value);
   }
 
   /**
@@ -109,11 +110,14 @@ class Input extends React.Component {
       classes = classnames('geosuggest__input', this.props.className);
 
     return (
-      <input
+      <TextValidator
         className={classes}
         ref={i => (this.input = i)}
         type="text"
         {...attributes}
+        label={this.props.label}
+        validators={this.props.validators}
+        errorMessages={this.props.errorMessages}
         value={this.props.value}
         style={this.props.style}
         onKeyDown={this.onInputKeyDown}

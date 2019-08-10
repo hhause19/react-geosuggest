@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Geosuggest from '../../src/Geosuggest';
+import {ValidatorForm} from 'react-material-ui-form-validator';
 
 class App extends React.Component {
   /**
@@ -57,16 +58,25 @@ class App extends React.Component {
 
     return (
       <div>
-        <Geosuggest
-          fixtures={fixtures}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          onChange={this.onChange}
-          onSuggestSelect={this.onSuggestSelect}
-          onSuggestNoResults={this.onSuggestNoResults}
-          location={new google.maps.LatLng(53.558572, 9.9278215)}
-          radius="20"
-        />
+        <ValidatorForm>
+          <Geosuggest
+            fixtures={fixtures}
+            label="Where to?"
+            style={{
+              input: {width: '100px'},
+              suggests: {width: '100px'}
+            }}
+            validators={['required']}
+            errorMessages={['Trip is required']}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            onChange={this.onChange}
+            onSuggestSelect={this.onSuggestSelect}
+            onSuggestNoResults={this.onSuggestNoResults}
+            location={new google.maps.LatLng(42.361145, -71.057083)}
+            radius="20"
+          />
+        </ValidatorForm>
       </div>
     );
   }

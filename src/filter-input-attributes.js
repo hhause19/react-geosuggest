@@ -2,6 +2,9 @@
  * Attributes allowed on input elements
  */
 const allowedAttributes = [
+  'label',
+  'validators',
+  'errorMessages',
   'autoCapitalize',
   'autoComplete',
   'autoCorrect',
