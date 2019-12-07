@@ -62,6 +62,8 @@ class App extends React.Component {
           fixtures={fixtures}
           label="Where to?"
           //style={{input: {width: '100px'}, suggests: {width: '100px'}}}
+          error
+          helperText="lmao"
           variant="outlined"
           onFocus={this.onFocus}
           onBlur={this.onBlur}

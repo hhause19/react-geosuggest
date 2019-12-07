@@ -7,6 +7,7 @@ const allowedAttributes = [
   'errorMessages',
   'error',
   'variant',
+  'helperText',
   'autoCapitalize',
   'autoComplete',
   'autoCorrect',
