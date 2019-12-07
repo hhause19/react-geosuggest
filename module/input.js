@@ -24,7 +24,9 @@ var _filterInputAttributes = require('./filter-input-attributes');
 
 var _filterInputAttributes2 = _interopRequireDefault(_filterInputAttributes);
 
-var _reactMaterialUiFormValidator = require('react-material-ui-form-validator');
+var _TextField = require('@material-ui/core/TextField');
+
+var _TextField2 = _interopRequireDefault(_TextField);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -170,7 +172,7 @@ var Input = function (_React$Component) {
       var attributes = (0, _filterInputAttributes2.default)(this.props),
           classes = (0, _classnames2.default)('geosuggest__input', this.props.className);
 
-      return _react2.default.createElement(_reactMaterialUiFormValidator.TextValidator, _extends({
+      return _react2.default.createElement(_TextField2.default, _extends({
         className: classes,
         ref: function ref(i) {
           return _this2.input = i;
@@ -178,8 +180,6 @@ var Input = function (_React$Component) {
         type: 'text'
       }, attributes, {
         label: this.props.label,
-        validators: this.props.validators,
-        errorMessages: this.props.errorMessages,
         value: this.props.value,
         style: this.props.style,
         onKeyDown: this.onInputKeyDown,

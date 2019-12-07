@@ -58,25 +58,19 @@ class App extends React.Component {
 
     return (
       <div>
-        <ValidatorForm>
-          <Geosuggest
-            fixtures={fixtures}
-            label="Where to?"
-            style={{
-              input: {width: '100px'},
-              suggests: {width: '100px'}
-            }}
-            validators={['required']}
-            errorMessages={['Trip is required']}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onChange={this.onChange}
-            onSuggestSelect={this.onSuggestSelect}
-            onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(42.361145, -71.057083)}
-            radius="20"
-          />
-        </ValidatorForm>
+        <Geosuggest
+          fixtures={fixtures}
+          label="Where to?"
+          //style={{input: {width: '100px'}, suggests: {width: '100px'}}}
+          variant="outlined"
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          onChange={this.onChange}
+          onSuggestSelect={this.onSuggestSelect}
+          onSuggestNoResults={this.onSuggestNoResults}
+          location={new google.maps.LatLng(42.361145, -71.057083)}
+          radius="20"
+        />
       </div>
     );
   }

@@ -5,6 +5,8 @@ const allowedAttributes = [
   'label',
   'validators',
   'errorMessages',
+  'error',
+  'variant',
   'autoCapitalize',
   'autoComplete',
   'autoCorrect',
